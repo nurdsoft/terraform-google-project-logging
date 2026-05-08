@@ -135,7 +135,7 @@ $ git push --set-upstream origin feat/abc
 | location | Location for the log bucket (e.g. `global`, `us-central1`) | `string` | `"global"` | no |
 | retention\_days | Number of days log entries are retained in the bucket | `number` | `30` | no |
 | sink\_filter | Log filter expression. Leave empty to export all log entries | `string` | `""` | no |
-| labels | Labels to apply to resources | `map(string)` | `{}` | no |
+
 
 ## Outputs
 

@@ -8,9 +8,4 @@ module "project_logging" {
   sink_name        = "my-log-sink"
   sink_destination = "logging.googleapis.com/projects/my-gcp-project/locations/global/buckets/my-log-bucket"
   sink_filter      = "resource.type=\"cloud_run_revision\""
-
-  labels = {
-    env  = "production"
-    team = "platform"
-  }
 }
