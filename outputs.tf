@@ -1,11 +1,11 @@
 output "bucket_resource_name" {
   description = "Full resource name of the log bucket (projects/{project}/locations/{location}/buckets/{bucket_id})."
-  value       = google_logging_project_bucket_config.this.id
+  value       = google_logging_project_bucket_config.this.name
 }
 
 output "sink_id" {
   description = "Full resource name of the log sink."
-  value       = google_logging_project_sink.this.id
+  value       = google_logging_project_sink.this.name
 }
 
 output "sink_writer_identity" {
