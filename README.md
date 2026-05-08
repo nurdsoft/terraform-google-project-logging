@@ -144,7 +144,7 @@ $ git push --set-upstream origin feat/abc
 
 | Name | Description |
 |------|-------------|
-| bucket\_name | Full resource name of the log bucket |
+| bucket\_resource\_name | Full resource name of the log bucket (`projects/{project}/locations/{location}/buckets/{bucket_id}`) |
 | sink\_id | Full resource name of the log sink |
 | sink\_writer\_identity | Service account identity of the sink. Grant this identity write access to the destination bucket |
 
