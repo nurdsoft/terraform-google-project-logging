@@ -46,6 +46,18 @@ module "project_logging" {
 }
 ```
 
+## IAM
+
+The sink uses a dedicated writer identity (`unique_writer_identity = true`). After creating the module, grant that identity write access to the log bucket, otherwise logs will be silently dropped:
+
+```hcl
+resource "google_project_iam_member" "log_sink_writer" {
+  project = "my-gcp-project"
+  role    = "roles/logging.bucketWriter"
+  member  = module.project_logging.sink_writer_identity
+}
+```
+
 ## Assumptions
 
 - A basic understanding of [Git](https://git-scm.com/). Git version `>= 2.33.0`.
