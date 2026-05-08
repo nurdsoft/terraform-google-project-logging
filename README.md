@@ -12,10 +12,9 @@ This Terraform module provisions GCP project-level logging resources using `goog
 module "project_logging" {
   source = "git::https://github.com/nurdsoft/terraform-google-project-logging.git?ref=v1.0.0"
 
-  project_id       = "my-gcp-project"
-  bucket_id        = "my-log-bucket"
-  sink_name        = "my-log-sink"
-  sink_destination = "logging.googleapis.com/projects/my-gcp-project/locations/global/buckets/my-log-bucket"
+  project_id = "my-gcp-project"
+  bucket_id  = "my-log-bucket"
+  sink_name  = "my-log-sink"
 }
 ```
 
@@ -25,11 +24,10 @@ module "project_logging" {
 module "project_logging" {
   source = "git::https://github.com/nurdsoft/terraform-google-project-logging.git?ref=v1.0.0"
 
-  project_id       = "my-gcp-project"
-  bucket_id        = "my-log-bucket"
-  sink_name        = "my-log-sink"
-  sink_destination = "logging.googleapis.com/projects/my-gcp-project/locations/global/buckets/my-log-bucket"
-  sink_filter      = "resource.type=\"cloud_run_revision\""
+  project_id  = "my-gcp-project"
+  bucket_id   = "my-log-bucket"
+  sink_name   = "my-log-sink"
+  sink_filter = "resource.type=\"cloud_run_revision\""
 }
 ```
 
@@ -39,18 +37,12 @@ module "project_logging" {
 module "project_logging" {
   source = "git::https://github.com/nurdsoft/terraform-google-project-logging.git?ref=v1.0.0"
 
-  project_id       = "my-gcp-project"
-  bucket_id        = "my-log-bucket"
-  location         = "global"
-  retention_days   = 90
-  sink_name        = "my-log-sink"
-  sink_destination = "logging.googleapis.com/projects/my-gcp-project/locations/global/buckets/my-log-bucket"
-  sink_filter      = "resource.type=\"cloud_run_revision\""
-
-  labels = {
-    env  = "production"
-    team = "platform"
-  }
+  project_id     = "my-gcp-project"
+  bucket_id      = "my-log-bucket"
+  location       = "global"
+  retention_days = 90
+  sink_name      = "my-log-sink"
+  sink_filter    = "resource.type=\"cloud_run_revision\""
 }
 ```
 
@@ -131,7 +123,6 @@ $ git push --set-upstream origin feat/abc
 | project\_id | GCP project ID | `string` | n/a | yes |
 | bucket\_id | ID of the log bucket. Must be unique within the project | `string` | n/a | yes |
 | sink\_name | Name of the log sink | `string` | n/a | yes |
-| sink\_destination | Destination URI for the log sink | `string` | n/a | yes |
 | location | Location for the log bucket (e.g. `global`, `us-central1`) | `string` | `"global"` | no |
 | retention\_days | Number of days log entries are retained in the bucket | `number` | `30` | no |
 | sink\_filter | Log filter expression. Leave empty to export all log entries | `string` | `""` | no |

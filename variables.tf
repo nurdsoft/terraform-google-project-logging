@@ -25,11 +25,6 @@ variable "sink_name" {
   type        = string
 }
 
-variable "sink_destination" {
-  description = "Destination URI for the log sink (e.g. \"logging.googleapis.com/projects/{project}/locations/{location}/buckets/{bucket_id}\")."
-  type        = string
-}
-
 variable "sink_filter" {
   description = "Log filter expression. Leave empty to export all log entries."
   type        = string

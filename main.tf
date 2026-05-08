@@ -8,7 +8,7 @@ resource "google_logging_project_bucket_config" "this" {
 resource "google_logging_project_sink" "this" {
   project                = var.project_id
   name                   = var.sink_name
-  destination            = var.sink_destination
+  destination            = "logging.googleapis.com/projects/${var.project_id}/locations/${google_logging_project_bucket_config.this.location}/buckets/${google_logging_project_bucket_config.this.bucket_id}"
   filter                 = var.sink_filter
   unique_writer_identity = true
 }
